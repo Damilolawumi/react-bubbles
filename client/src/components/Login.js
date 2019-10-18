@@ -1,7 +1,7 @@
 import React, {useRef, useState} from "react";
 import Axios from "axios";
 
-const Login = () => {
+const Login = (props) => {
   
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
@@ -10,7 +10,7 @@ const Login = () => {
 
   const [loading, setLoading] = useState(false)
  
-  const submit = (props) => {
+  const submit = () => {
     setLoading(true);
     Axios.post('http://localhost:5000/api/login', {
       username: usernameRef.current.value,
